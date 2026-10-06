@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hireway - find jobs and internships that fit your skills.">
+  <title>Hireway | Find jobs and internships</title>
+
+  <!-- Fonts: ham CSS me inhe use karenge -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <a href="#home" class="logo">Hire<span>way</span></a>
+
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#how">How it works</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-ghost" id="loginBtn">Log in</button>
+      <button class="btn btn-primary" id="signupBtn">Sign up</button>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">&#9776;</button>
+  </header>
+
+  <main id="home">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Your first job or internship starts here.</h1>
+        <p>Search thousands of openings from startups and big companies. Filter by skill, city and stipend, then apply in a few clicks.</p>
+
+        <form class="search-bar" id="searchForm">
+          <div class="field">
+            <label for="keyword">What</label>
+            <input type="text" id="keyword" placeholder="Job title or skill" required>
+          </div>
+          <div class="field">
+            <label for="location">Where</label>
+            <input type="text" id="location" placeholder="City or Remote">
+          </div>
+          <div class="field">
+            <label for="type">Type</label>
+            <select id="type">
+              <option value="all">Jobs and internships</option>
+              <option value="job">Full-time jobs</option>
+              <option value="internship">Internships</option>
+              <option value="remote">Remote only</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <p class="popular">
+          Popular:
+          <a href="#" class="chip">Web developer</a>
+          <a href="#" class="chip">Data analyst</a>
+          <a href="#" class="chip">UI/UX design</a>
+          <a href="#" class="chip">Content writing</a>
+        </p>
+      </div>
+
+      <!-- 3D scene: CSS me perspective + transform-style: preserve-3d lagayenge -->
+      <div class="hero-scene" id="scene" aria-hidden="true">
+        <div class="scene-inner">
+          <div class="float-card card-main" data-depth="1">
+            <div class="company-logo">F</div>
+            <h3>Frontend Intern</h3>
+            <p>Flux Labs - Remote</p>
+            <span class="tag">&#8377;15,000 / month</span>
+          </div>
+          <div class="float-card card-left" data-depth="2">
+            <div class="company-logo">D</div>
+            <h3>Data Analyst</h3>
+            <p>DataNest - Noida</p>
+          </div>
+          <div class="float-card card-right" data-depth="3">
+            <div class="company-logo">U</div>
+            <h3>UI Designer</h3>
+            <p>Pixel Co - Delhi</p>
+          </div>
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="stat"><strong data-count="12000">0</strong><span>Open positions</span></div>
+      <div class="stat"><strong data-count="3500">0</strong><span>Hiring companies</span></div>
+      <div class="stat"><strong data-count="80000">0</strong><span>Students placed</span></div>
+      <div class="stat"><strong data-count="150">0</strong><span>Cities covered</span></div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>Browse by field</h2>
+        <p>Pick the area you want to grow in.</p>
+      </div>
+      <div class="category-grid">
+        <a href="#" class="category-card tilt"><span class="icon">&lt;/&gt;</span><h3>Software development</h3><p>2,400 openings</p></a>
+        <a href="#" class="category-card tilt"><span class="icon">&#9998;</span><h3>Design</h3><p>860 openings</p></a>
+        <a href="#" class="category-card tilt"><span class="icon">&#9638;</span><h3>Data and analytics</h3><p>1,150 openings</p></a>
+        <a href="#" class="category-card tilt"><span class="icon">&#9993;</span><h3>Marketing</h3><p>990 openings</p></a>
+        <a href="#" class="category-card tilt"><span class="icon">&#9776;</span><h3>Content and writing</h3><p>540 openings</p></a>
+        <a href="#" class="category-card tilt"><span class="icon">&#9881;</span><h3>Engineering</h3><p>1,720 openings</p></a>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED JOBS ============ -->
+    <section class="section" id="jobs">
+      <div class="section-head">
+        <h2>Latest openings</h2>
+        <div class="filter-tabs" role="tablist">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="job">Jobs</button>
+          <button class="tab" data-filter="internship">Internships</button>
+        </div>
+      </div>
+
+      <div class="job-grid" id="jobGrid">
+        <article class="job-card tilt" data-type="internship">
+          <div class="job-top">
+            <div class="company-logo">F</div>
+            <button class="save-btn" aria-label="Save job">&#9825;</button>
+          </div>
+          <h3>Frontend Developer Intern</h3>
+          <p class="company">Flux Labs</p>
+          <ul class="meta">
+            <li>Remote</li><li>3 months</li><li>&#8377;15,000 / month</li>
+          </ul>
+          <div class="skills"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <a href="#" class="btn btn-outline">Apply now</a>
+        </article>
+
+        <article class="job-card tilt" data-type="job">
+          <div class="job-top">
+            <div class="company-logo">D</div>
+            <button class="save-btn" aria-label="Save job">&#9825;</button>
+          </div>
+          <h3>Junior Data Analyst</h3>
+          <p class="company">DataNest</p>
+          <ul class="meta">
+            <li>Noida</li><li>Full-time</li><li>&#8377;4 - 6 LPA</li>
+          </ul>
+          <div class="skills"><span>Excel</span><span>SQL</span><span>Python</span></div>
+          <a href="#" class="btn btn-outline">Apply now</a>
+        </article>
+
+        <article class="job-card tilt" data-type="internship">
+          <div class="job-top">
+            <div class="company-logo">P</div>
+            <button class="save-btn" aria-label="Save job">&#9825;</button>
+          </div>
+          <h3>UI/UX Design Intern</h3>
+          <p class="company">Pixel Co</p>
+          <ul class="meta">
+            <li>Delhi</li><li>6 months</li><li>&#8377;12,000 / month</li>
+          </ul>
+          <div class="skills"><span>Figma</span><span>Prototyping</span></div>
+          <a href="#" class="btn btn-outline">Apply now</a>
+        </article>
+
+        <article class="job-card tilt" data-type="job">
+          <div class="job-top">
+            <div class="company-logo">C</div>
+            <button class="save-btn" aria-label="Save job">&#9825;</button>
+          </div>
+          <h3>Content Writer</h3>
+          <p class="company">Craftly Media</p>
+          <ul class="meta">
+            <li>Remote</li><li>Full-time</li><li>&#8377;3 - 4 LPA</li>
+          </ul>
+          <div class="skills"><span>SEO</span><span>Copywriting</span></div>
+          <a href="#" class="btn btn-outline">Apply now</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how">
+      <div class="section-head">
+        <h2>How it works</h2>
+      </div>
+      <ol class="steps">
+        <li class="step tilt"><h3>Create your profile</h3><p>Add your skills, education and resume once.</p></li>
+        <li class="step tilt"><h3>Find matching roles</h3><p>Search and filter until you see the right fit.</p></li>
+        <li class="step tilt"><h3>Apply and track</h3><p>Send applications and follow each status in one place.</p></li>
+      </ol>
+    </section>
+
+    <!-- ============ TOP COMPANIES ============ -->
+    <section class="section companies">
+      <div class="section-head">
+        <h2>Companies hiring right now</h2>
+      </div>
+      <div class="company-row">
+        <span>Flux Labs</span><span>DataNest</span><span>Pixel Co</span>
+        <span>Craftly</span><span>CloudBay</span><span>Nova Soft</span>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <h2>Ready for your next step?</h2>
+      <p>Create a free profile and get matched with new openings every week.</p>
+      <form class="cta-form" id="newsletterForm">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Get started</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <a href="#home" class="logo">Hire<span>way</span></a>
+      <p>Helping students and freshers start their careers.</p>
+    </div>
+    <div class="footer-col">
+      <h4>For candidates</h4>
+      <a href="#">Browse jobs</a>
+      <a href="#">Browse internships</a>
+      <a href="#">Resume tips</a>
+    </div>
+    <div class="footer-col">
+      <h4>For employers</h4>
+      <a href="#">Post a job</a>
+      <a href="#">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+    <p class="copyright">&copy; 2026 Hireway. Built as a portfolio project.</p>
+  </footer>
+
+
+    <!-- ============ AUTH MODAL ============ -->
+  <div class="modal" id="authModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" data-close aria-label="Close">&#10005;</button>
+
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" data-mode="login" role="tab">Log in</button>
+        <button class="auth-tab" data-mode="signup" role="tab">Sign up</button>
+      </div>
+
+      <h2 id="authTitle">Welcome back</h2>
+      <p class="auth-sub" id="authSub">Log in to see your saved jobs.</p>
+
+      <form id="authForm" novalidate>
+        <div class="form-row" data-only="signup" hidden>
+          <label for="authName">Full name</label>
+          <input type="text" id="authName" autocomplete="name" placeholder="Your name">
+        </div>
+
+        <div class="form-row">
+          <label for="authEmail">Email</label>
+          <input type="email" id="authEmail" autocomplete="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-row">
+          <label for="authPassword">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="authPassword" autocomplete="current-password" placeholder="At least 8 characters">
+            <button type="button" class="pw-toggle" id="pwToggle">Show</button>
+          </div>
+        </div>
+
+        <p class="form-error" id="authError" role="alert"></p>
+        <button type="submit" class="btn btn-primary btn-block" id="authSubmit">Log in</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+   <script src="auth.js"></script>
+</body>
+</html> 
