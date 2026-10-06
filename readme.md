@@ -4,7 +4,7 @@ A modern, responsive website to discover jobs and internships. It shows live lis
 
 
 
-![Hireway screenshot](screenshot.png)
+
 
 ## Features
 
@@ -70,4 +70,5 @@ Job data provided by [Remotive](https://remotive.com).
 ## Author
 
 **Your Name**
-[LinkedIn](https://linkedin.com/in/your-profile) | [GitHub](https://github.com/USERNAME)
+Dimpal
+
